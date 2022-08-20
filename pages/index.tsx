@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import withTransition from "../HOC/withTransition";
 import styles from "../styles/Home.module.css";
 
 type User = {
@@ -87,4 +88,4 @@ export async function getServerSideProps() {
   return { props: { data } };
 }
 
-export default Home;
+export default withTransition(Home);

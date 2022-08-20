@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
+import withTransition from "../HOC/withTransition";
 import styles from "../styles/Faqs.module.css";
 
 type FAQ = { id: number; title: string; description: string };
@@ -42,4 +43,4 @@ export async function getStaticProps() {
   };
 }
 
-export default FAQS;
+export default withTransition(FAQS);

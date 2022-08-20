@@ -19,7 +19,8 @@
   color: var(--primaryColor);
 }
 
-.loginButton {
+.loginButton,
+.logoutButton {
   padding: 8px 20px;
   font-size: 1rem;
   border-radius: 3px;
@@ -30,7 +31,18 @@
   border: 1px solid var(--primaryColor);
 }
 
+.logoutButton {
+  background-color: #fff;
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+}
+
 .header .loginButton:hover {
   color: var(--primaryColor);
   background-color: #fff;
+}
+
+.header .logoutButton:hover {
+  color: #fff;
+  background-color: var(--primaryColor);
 }

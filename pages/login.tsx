@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import styles from "../styles/Login.module.css";
 import { useRouter } from "next/router";
 import useAuth from "../auth/auth.context";
+import withTransition from "../HOC/withTransition";
 
 const Login: NextPage = () => {
   const router = useRouter();
@@ -53,4 +54,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default withTransition(Login);
