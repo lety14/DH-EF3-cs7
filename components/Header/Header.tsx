@@ -2,8 +2,11 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Header.module.css";
+import useAuth from "../../auth/auth.context";
 
 const Header: FC = () => {
+  const { authenticated, logout } = useAuth();
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
@@ -17,9 +20,15 @@ const Header: FC = () => {
         <Link href="/">Home</Link>
         <Link href="/faqs">Preguntas Frecuentes</Link>
       </div>
-      <button className={styles.loginButton}>
-        <Link href="/login">Login</Link>
-      </button>
+      {!authenticated ? (
+        <button className={styles.loginButton}>
+          <Link href="/login">Login</Link>
+        </button>
+      ) : (
+        <button className={styles.logoutButton} onClick={logout}>
+          Logout
+        </button>
+      )}
     </header>
   );
 };
